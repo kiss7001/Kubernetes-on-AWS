@@ -88,8 +88,8 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
 
 
 7. WINDOWS 10의 WSL에서 관리시스템을 생성해서 운영중인 경우 아래와 같이 EC2 연결을 위한 키를 생성한다.
- 방법1: AWS에서 ssh를 생성하거나 아래의 명령을 실행해 aws--login-key 키를 생성한다. 키 생성시 만들어지는 pem은 잘 저장한후 ssh 접속시 사용한다.
- 방법2: aws ec2 create-key-pair --region ap-northeast-2 --key-name test-k8skey --output text > aws--login-key
+ 방법1: AWS에서 ssh를 생성하거나 아래의 명령을 실행해 test-k8skey 키를 생성한다. 키 생성시 만들어지는 pem은 잘 저장한후 ssh 접속시 사용한다.
+ 방법2: aws ec2 create-key-pair --region ap-northeast-2 --key-name test-k8skey --output text > test-k8skey-file
 
 8. EKS 구성
   참고: https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/getting-started-eksctl.html
@@ -101,7 +101,7 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
     --region ap-northeast-2 \
     --with-oidc \
     --ssh-access \
-    --ssh-public-key aws--login-key \
+    --ssh-public-key test-k8skey \
     --nodes 3 \
     --node-type t3.medium \
     --node-volume-size=20 \
