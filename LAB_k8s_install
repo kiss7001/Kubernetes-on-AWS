@@ -29,7 +29,7 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
   $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
   $ unzip awscliv2.zip
   $ sudo ./aws/install
-	  You can now run: /usr/local/bin/aws --version
+   You can now run: /usr/local/bin/aws --version
   $ aws --version
   aws-cli/2.7.11 Python/3.9.11 Linux/5.13.0-1029-aws exe/x86_64.ubuntu.20 prompt/off
   
@@ -103,20 +103,20 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
     Amazon EKS 노드(Workder 노드) : 
 
       인스턴스 이름      온디맨드 시간당 요금      vCPU      메모리      스토리지       네트워크 성능
-      t3.nano           0.0065 USD	            2	        0.5GiB	    EBS 전용	    최대 5기가비트 <- Workder 노드 사용불가 
-      t3.micro	        0.013 USD	              2	        1GiB	      EBS 전용	    최대 5기가비트
-      t3.small	        0.026 USD	              2	        2GiB	      EBS 전용	    최대 5기가비트
-      t3.medium	        0.052 USD	              2	        4GiB	      EBS 전용	    최대 5기가비트
-      t3.large	        0.104 USD	              2	        8GiB	      EBS 전용	    최대 5기가비트
-      t3.xlarge	        0.208 USD	              4	        16GiB	      EBS 전용	    최대 5기가비트
-      t3.2xlarge	      0.416 USD	              8	        32GiB	      EBS 전용	    최대 5기가비트
-      t3a.nano	        0.0059 USD	            2	        0.5GiB	    EBS 전용	    최대 5기가비트 <- Workder 노드 사용불가 
-      t3a.micro	        0.0117 USD	            2	        1GiB	      EBS 전용	    최대 5기가비트
-      t3a.small	        0.0234 USD	            2	        2GiB	      EBS 전용	    최대 5기가비트
-      t3a.medium	      0.0468 USD	            2	        4GiB	      EBS 전용	    최대 5기가비트
-      t3a.large	        0.0936 USD	            2	        8GiB	      EBS 전용	    최대 5기가비트
-      t3a.xlarge	      0.1872 USD	            4	        16GiB	      EBS 전용	    최대 5기가비트
-      t3a.2xlarge	      0.3744 USD	            8	        32GiB	      EBS 전용	    최대 5기가비트
+      t3.nano           0.0065 USD              2          0.5GiB      EBS 전용      최대 5기가비트 <- Workder 노드 사용불가 
+      t3.micro          0.013 USD               2          1GiB        EBS 전용      최대 5기가비트
+      t3.small          0.026 USD               2          2GiB        EBS 전용      최대 5기가비트
+      t3.medium         0.052 USD               2          4GiB        EBS 전용      최대 5기가비트
+      t3.large          0.104 USD               2          8GiB        EBS 전용      최대 5기가비트
+      t3.xlarge         0.208 USD               4          16GiB       EBS 전용      최대 5기가비트
+      t3.2xlarge        0.416 USD               8          32GiB       EBS 전용      최대 5기가비트
+      t3a.nano          0.0059 USD              2          0.5GiB      EBS 전용      최대 5기가비트 <- Workder 노드 사용불가 
+      t3a.micro         0.0117 USD              2          1GiB        EBS 전용      최대 5기가비트
+      t3a.small         0.0234 USD              2          2GiB        EBS 전용      최대 5기가비트
+      t3a.medium        0.0468 USD              2          4GiB        EBS 전용      최대 5기가비트
+      t3a.large         0.0936 USD              2          8GiB        EBS 전용      최대 5기가비트
+      t3a.xlarge        0.1872 USD              4          16GiB       EBS 전용      최대 5기가비트
+      t3a.2xlarge       0.3744 USD              8          32GiB       EBS 전용      최대 5기가비트
 
 
   [Managed nodes – Linux] 탭 선택후 사용설명확인
@@ -138,38 +138,38 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
 
    CloudFormation으로 생성되기 때문에 aws에서 cloudformation으로 확인해본다.
    생성되는 시간이 20분정도 걸린다.
-	...
-	2021-05-19 06:04:39 [ℹ]  eksctl version 0.50.0
-	2021-05-19 06:04:39 [ℹ]  using region ap-northeast-2
-	2021-05-19 06:04:39 [ℹ]  setting availability zones to [ap-northeast-2a ap-northeast-2b ap-northeast-2c]
-	2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2a - public:192.168.0.0/19 private:192.168.96.0/19
-	2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2b - public:192.168.32.0/19 private:192.168.128.0/19
-	2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2c - public:192.168.64.0/19 private:192.168.160.0/19
-	2021-05-19 06:04:39 [ℹ]  using EC2 key pair %!q(*string=<nil>)
-	2021-05-19 06:04:39 [ℹ]  using Kubernetes version 1.19
-	2021-05-19 06:04:39 [ℹ]  creating EKS cluster "k8s-demo" in "ap-northeast-2" region with managed nodes
-	2021-05-19 06:04:39 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
-	2021-05-19 06:04:39 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=ap-northeast-2 --cluster=k8s-demo'
-	2021-05-19 06:04:39 [ℹ]  CloudWatch logging will not be enabled for cluster "k8s-demo" in "ap-northeast-2"
-	2021-05-19 06:04:39 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=ap-northeast-2 --cluster=k8s-demo'
-	...
-	2021-05-19 07:09:28 [✔]  saved kubeconfig as "/home/ubuntu/.kube/config"
-	2021-05-19 07:09:28 [ℹ]  no tasks
-	2021-05-19 07:09:28 [✔]  all EKS cluster resources for "k8s-demo" have been created
-	2021-05-19 07:09:29 [ℹ]  nodegroup "ng-343b6807" has 3 node(s)
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-38-198.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-4-22.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-82-229.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:29 [ℹ]  waiting for at least 3 node(s) to become ready in "ng-343b6807"
-	2021-05-19 07:09:29 [ℹ]  nodegroup "ng-343b6807" has 3 node(s)
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-38-198.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-4-22.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:29 [ℹ]  node "ip-192-168-82-229.ap-northeast-2.compute.internal" is ready
-	2021-05-19 07:09:32 [ℹ]  kubectl command should work with "/home/ubuntu/.kube/config", try 'kubectl get nodes'
-	2021-05-19 07:09:32 [✔]  EKS cluster "k8s-demo" in "ap-northeast-2" region is ready
+ ...
+ 2021-05-19 06:04:39 [ℹ]  eksctl version 0.50.0
+ 2021-05-19 06:04:39 [ℹ]  using region ap-northeast-2
+ 2021-05-19 06:04:39 [ℹ]  setting availability zones to [ap-northeast-2a ap-northeast-2b ap-northeast-2c]
+ 2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2a - public:192.168.0.0/19 private:192.168.96.0/19
+ 2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2b - public:192.168.32.0/19 private:192.168.128.0/19
+ 2021-05-19 06:04:39 [ℹ]  subnets for ap-northeast-2c - public:192.168.64.0/19 private:192.168.160.0/19
+ 2021-05-19 06:04:39 [ℹ]  using EC2 key pair %!q(*string=<nil>)
+ 2021-05-19 06:04:39 [ℹ]  using Kubernetes version 1.19
+ 2021-05-19 06:04:39 [ℹ]  creating EKS cluster "k8s-demo" in "ap-northeast-2" region with managed nodes
+ 2021-05-19 06:04:39 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+ 2021-05-19 06:04:39 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=ap-northeast-2 --cluster=k8s-demo'
+ 2021-05-19 06:04:39 [ℹ]  CloudWatch logging will not be enabled for cluster "k8s-demo" in "ap-northeast-2"
+ 2021-05-19 06:04:39 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=ap-northeast-2 --cluster=k8s-demo'
+ ...
+ 2021-05-19 07:09:28 [✔]  saved kubeconfig as "/home/ubuntu/.kube/config"
+ 2021-05-19 07:09:28 [ℹ]  no tasks
+ 2021-05-19 07:09:28 [✔]  all EKS cluster resources for "k8s-demo" have been created
+ 2021-05-19 07:09:29 [ℹ]  nodegroup "ng-343b6807" has 3 node(s)
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-38-198.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-4-22.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-82-229.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:29 [ℹ]  waiting for at least 3 node(s) to become ready in "ng-343b6807"
+ 2021-05-19 07:09:29 [ℹ]  nodegroup "ng-343b6807" has 3 node(s)
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-38-198.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-4-22.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:29 [ℹ]  node "ip-192-168-82-229.ap-northeast-2.compute.internal" is ready
+ 2021-05-19 07:09:32 [ℹ]  kubectl command should work with "/home/ubuntu/.kube/config", try 'kubectl get nodes'
+ 2021-05-19 07:09:32 [✔]  EKS cluster "k8s-demo" in "ap-northeast-2" region is ready
 
 
-	- aws에서 확인 :  CloudFormation 검색 후 확인
+ - aws에서 확인 :  CloudFormation 검색 후 확인
 
 9. 설치완료되면 다음과 같이 설치 결과 확인하고, CLI 명령어 자동완성 기능을 추가
 - kubectl 명령으로 설치결과 확인
