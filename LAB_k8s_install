@@ -98,7 +98,7 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
   * Workder 노드 최소 사양 — CPU: 1Core, RAM: 1G
 
   EKS요금 ( 아시아 태평양(서울) 기준 )
-    Amazon EKS 클러스터(Master 노드) : 시간당 0.10USD ,월(730시간) 73 USD ( 환율 1,243.60 USD일 경우  90,782원 )
+    Amazon EKS 클러스터(Master 노드) : 시간당 0.10USD ,월(730시간) 73 USD ( 환율 1,243.60 USD일 경우  90,782원 입니다. )
 
     Amazon EKS 노드(Workder 노드) : 
 
