@@ -93,7 +93,32 @@ eksctl 명령을 이용해서 AWS EKS 생성하기
 
 8. EKS 구성
   참고: https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/getting-started-eksctl.html
-  EKS요금 시간당 0.10USD  + t3.medium 시간 0.416 *2 USD 입니다.
+
+  * Master 노드 최소 사양 — CPU: 2Core, RAM: 2G
+  * Workder 노드 최소 사양 — CPU: 1Core, RAM: 1G
+
+  EKS요금 ( 아시아 태평양(서울) 기준 )
+    Amazon EKS 클러스터(Master 노드) : 시간당 0.10USD
+
+    Amazon EKS 노드(Workder 노드) : 
+
+      인스턴스 이름      온디맨드 시간당 요금      vCPU      메모리      스토리지       네트워크 성능
+      t3.nano           0.0065 USD	            2	        0.5GiB	    EBS 전용	    최대 5기가비트 <- Workder 노드 사용불가 
+      t3.micro	        0.013 USD	              2	        1GiB	      EBS 전용	    최대 5기가비트
+      t3.small	        0.026 USD	              2	        2GiB	      EBS 전용	    최대 5기가비트
+      t3.medium	        0.052 USD	              2	        4GiB	      EBS 전용	    최대 5기가비트
+      t3.large	        0.104 USD	              2	        8GiB	      EBS 전용	    최대 5기가비트
+      t3.xlarge	        0.208 USD	              4	        16GiB	      EBS 전용	    최대 5기가비트
+      t3.2xlarge	      0.416 USD	              8	        32GiB	      EBS 전용	    최대 5기가비트
+      t3a.nano	        0.0059 USD	            2	        0.5GiB	    EBS 전용	    최대 5기가비트 <- Workder 노드 사용불가 
+      t3a.micro	        0.0117 USD	            2	        1GiB	      EBS 전용	    최대 5기가비트
+      t3a.small	        0.0234 USD	            2	        2GiB	      EBS 전용	    최대 5기가비트
+      t3a.medium	      0.0468 USD	            2	        4GiB	      EBS 전용	    최대 5기가비트
+      t3a.large	        0.0936 USD	            2	        8GiB	      EBS 전용	    최대 5기가비트
+      t3a.xlarge	      0.1872 USD	            4	        16GiB	      EBS 전용	    최대 5기가비트
+      t3a.2xlarge	      0.3744 USD	            8	        32GiB	      EBS 전용	    최대 5기가비트
+
+
   [Managed nodes – Linux] 탭 선택후 사용설명확인
  eksctl 명령을 실행해서 Amazon EKS 클러스터를 생성한다.  
   $ eksctl create cluster \
